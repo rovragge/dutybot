@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://192.168.1.2:5432/rovragge?currentSchema=dutybot
+    username: rovragge_dutybot_user
+    password: qwe1234rty
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    url: jdbc:postgresql://192.168.1.2:5432/rovragge
+    user: rovragge_dutybot_user
+    password: qwe1234rty
+    schemas: dutybot
+
+logging:
+  level:
+    org:
+      springframework:
+        transaction:
+          interceptor: TRACE
+        web: DEBUG
+      hibernate:
+        SQL: DEBUG
+
+telegram:
+  token: 5913025925:AAGd_1eqMBz5giLW6BcFuKX8pZvA1RGmVJg
+  chats: 165518764,165518764
+#  chat: -1001670455942
+scheduling:
+  cron: '0 0 10 * * ?'
+#  cron: '*/10 * * * * ?'

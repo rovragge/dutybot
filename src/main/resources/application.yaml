@@ -1,0 +1,24 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT:5432}/${DB_NAME}?currentSchema=${DB_SCHEMA:public}
+    username: ${DB_USER}
+    password: ${DB_PASS}
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT:5432}/${DB_NAME}
+    user: ${DB_USER}
+    password: ${DB_PASS}
+    schemas: ${DB_SCHEMA:public}
+
+logging:
+  level:
+    root: INFO
+
+telegram:
+  token: ${BOT_TOKEN}
+  chats: ${TG_CHATS}
+scheduling:
+  cron: ${ANNOUNCE_CRON}
